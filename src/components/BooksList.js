@@ -7,8 +7,8 @@ const BooksList = ({button}) => {
     const [selectState, setSelectState] = useState(false);
     const [result, setresult] = useState([]);
     const [query, setquery] = useState("")
-    let darkBack=button==false?'white':'black'
-    let darkFont=button==true?'white':'black'
+    let darkBack=button===false?'white':'black'
+    let darkFont=button===true?'white':'black'
     const fetchQuery = () => {
         const finalQ=query==""?{}:query
       fetch(

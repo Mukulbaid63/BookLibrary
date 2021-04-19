@@ -13,6 +13,7 @@ const Sidebar = ({button,setbutton,changeHandler}) => {
             <div className="my-2 "><PlayCircleOutlineRoundedIcon/>&nbsp;&nbsp;&nbsp;&nbsp;My Books</div>
             <div className=" my-2 mb-4"><AddCircleOutlineIcon/>&nbsp;&nbsp;&nbsp;&nbsp;Add Books</div>
             <div className="text-secondary my-4">Settings</div>
+            
             <div className="my-2 " style={{cursor:'pointer'}} onClick={changeHandler}><InvertColorsIcon/>&nbsp;&nbsp;&nbsp;&nbsp;Dark Mode</div>
 
         </div>
