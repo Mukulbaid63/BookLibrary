@@ -1,0 +1,7 @@
+.bookslist{
+    display: flex;
+    flex-direction: column;
+    flex:0.81;
+    background-color: #fff;
+    height: 100vh;
+}
