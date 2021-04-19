@@ -6,10 +6,13 @@ import { useState } from 'react';
 
 function App() {
   const [button, setbutton] = useState(false)
+  const changeHandler=()=>{
+    setbutton(()=>!button)
+  }
   return (
     <div className="app">
-      <Sidebar button={button} setbutton={setbutton}/>
-      <BooksList/>
+      <Sidebar button={button} setbutton={setbutton} changeHandler={changeHandler}/>
+      <BooksList button={button} setbutton={setbutton}/>
     </div>
   );
 }

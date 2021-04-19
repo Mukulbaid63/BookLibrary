@@ -3,11 +3,12 @@ import '../styles/BooksList.css'
 import ReorderIcon from '@material-ui/icons/Reorder';
 import AppsIcon from '@material-ui/icons/Apps';
 import BookItem from './BookItem';
-const BooksList = () => {
+const BooksList = ({button}) => {
     const [selectState, setSelectState] = useState(false);
     const [result, setresult] = useState([]);
     const [query, setquery] = useState("")
-
+    let darkBack=button==false?'white':'black'
+    let darkFont=button==true?'white':'black'
     const fetchQuery = () => {
         const finalQ=query==""?{}:query
       fetch(
@@ -42,10 +43,10 @@ const BooksList = () => {
         setquery(()=>evt.target.value);
     }
     return (
-        <div className="bookslist d-flex flex-column">
+        <div className="bookslist d-flex flex-column" style={{background:`${darkBack}`}}>
             
             <div className="d-flex justify-content-between">
-            <h2>Book Library</h2>
+            <h2 style={{color:`${darkFont}`}}>Book Library</h2>
             <div className="d-flex justify-content-around">
                 <button>
                 <AppsIcon/>
