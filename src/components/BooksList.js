@@ -4,6 +4,8 @@ import ReorderIcon from '@material-ui/icons/Reorder';
 import AppsIcon from '@material-ui/icons/Apps';
 import BookItem from './BookItem';
 import InvertColorsIcon from '@material-ui/icons/InvertColors';
+import Brightness4RoundedIcon from '@material-ui/icons/Brightness4Rounded';
+import ViewComfyRoundedIcon from '@material-ui/icons/ViewComfyRounded';
 
 const BooksList = ({button,view,setview,clickHandler,changeHandler}) => {
     const [selectState, setSelectState] = useState(false);
@@ -50,14 +52,14 @@ const BooksList = ({button,view,setview,clickHandler,changeHandler}) => {
             <div className="d-flex justify-content-between">
             <h2 style={{color:`${darkFont}`}}>Book Library</h2>
             <div className="d-flex justify-content-around">
-            <div className="my-2 d-lg-none d-md-none" style={{cursor:'pointer',color:`${darkFont}`}} onClick={changeHandler}><InvertColorsIcon/>&nbsp;</div>
+            <div className=" d-lg-none d-md-none " onClick={changeHandler}><InvertColorsIcon style={{cursor:'pointer',color:`${darkFont}`,fontSize:'36px'}} /></div>
 
-                <button onClick={clickHandler}>
-                <AppsIcon/>
-                <ReorderIcon/>
-                </button>
+                <div onClick={clickHandler}>
+               {view? <ViewComfyRoundedIcon style={{fontSize:'36px',marginRight:'5px',cursor:'pointer'}} />:
+                <ReorderIcon style={{fontSize:'36px',marginRight:'5px',cursor:'pointer'}} />}
+                </div>
                 
-                <input value={query} onChange={changeHandler1} placeholder="Type here to Search..."></input>
+                <input value={query} style={{width:'18vw',height:'5vh'}} onChange={changeHandler1} placeholder="Type here to Search..."></input>
             </div>
             </div>
             {selectState&&<BookItem view={view} setview={setview} result={result}/>}
