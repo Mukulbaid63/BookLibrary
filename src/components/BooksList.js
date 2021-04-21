@@ -55,8 +55,8 @@ const BooksList = ({button,view,setview,clickHandler,changeHandler}) => {
             <div className=" d-lg-none d-md-none " onClick={changeHandler}><InvertColorsIcon style={{cursor:'pointer',color:`${darkFont}`,fontSize:'36px'}} /></div>
 
                 <div onClick={clickHandler}>
-               {view? <ViewComfyRoundedIcon style={{fontSize:'36px',marginRight:'5px',cursor:'pointer'}} />:
-                <ReorderIcon style={{fontSize:'36px',marginRight:'5px',cursor:'pointer'}} />}
+               {view? <ViewComfyRoundedIcon style={{fontSize:'36px',marginRight:'5px',cursor:'pointer',color:`${darkFont}`}} />:
+                <ReorderIcon style={{fontSize:'36px',marginRight:'5px',cursor:'pointer',color:`${darkFont}`}} />}
                 </div>
                 
                 <input value={query} style={{width:'18vw',height:'5vh'}} onChange={changeHandler1} placeholder="Type here to Search..."></input>
