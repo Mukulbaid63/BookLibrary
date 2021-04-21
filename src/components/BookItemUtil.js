@@ -2,7 +2,7 @@ import React from 'react';
 
 const BookItemUtil = ({item,view,setview}) => {
     const grid=()=>{
-        return(<div className="d-flex flex-column p-3  m-3 my-2 rounded " style={{ background:'grey',color:'white',border:'1px solid silver'}} >
+        return(<div className="d-flex flex-column p-3 m-3 m-lg-5 m-sm-3  rounded " style={{ background:'grey',color:'white',border:'1px solid silver'}} >
         <img className="rounded " alt=""src={item.volumeInfo.imageLinks.thumbnail} style={{width:'150px',height:'210px'}}/> 
         <p className="text-truncate text-wrap">{item.volumeInfo.title.substring(0,14)}...</p>
         <p className="text-truncate text-wrap">{item.volumeInfo.authors&&item.volumeInfo.authors[0].substring(0,14) }...</p>
