@@ -5,3 +5,9 @@
     background-color: #fff;
     height: 100vh;
 }
+
+@media (max-width: 640px) {                  
+    .bookslist {
+       flex:1;
+    }
+ }

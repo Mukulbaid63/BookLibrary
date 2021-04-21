@@ -3,7 +3,9 @@ import '../styles/BooksList.css'
 import ReorderIcon from '@material-ui/icons/Reorder';
 import AppsIcon from '@material-ui/icons/Apps';
 import BookItem from './BookItem';
-const BooksList = ({button}) => {
+import InvertColorsIcon from '@material-ui/icons/InvertColors';
+
+const BooksList = ({button,view,setview,clickHandler,changeHandler}) => {
     const [selectState, setSelectState] = useState(false);
     const [result, setresult] = useState([]);
     const [query, setquery] = useState("")
@@ -39,25 +41,26 @@ const BooksList = ({button}) => {
         });
     }, []);
 
-    const changeHandler=(evt)=>{
+    const changeHandler1=(evt)=>{
         setquery(()=>evt.target.value);
     }
     return (
-        <div className="bookslist d-flex flex-column" style={{background:`${darkBack}`}}>
+        <div className="bookslist p-3 d-flex flex-column" style={{background:`${darkBack}`}}>
             
             <div className="d-flex justify-content-between">
             <h2 style={{color:`${darkFont}`}}>Book Library</h2>
             <div className="d-flex justify-content-around">
-                <button>
+            <div className="my-2 d-lg-none d-md-none" style={{cursor:'pointer',color:`${darkFont}`}} onClick={changeHandler}><InvertColorsIcon/>&nbsp;</div>
+
+                <button onClick={clickHandler}>
                 <AppsIcon/>
-                </button>
-                <button>
                 <ReorderIcon/>
                 </button>
-                <input value={query} onChange={changeHandler}></input>
+                
+                <input value={query} onChange={changeHandler1} placeholder="Type here to Search..."></input>
             </div>
             </div>
-            {selectState&&<BookItem result={result}/>}
+            {selectState&&<BookItem view={view} setview={setview} result={result}/>}
             
         </div>
     );
